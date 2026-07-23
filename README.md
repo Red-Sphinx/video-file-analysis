@@ -17,3 +17,16 @@ Topics:
 - ffprobe
 - command options
 - formatted output
+
+### Version 002
+
+Improved metadata formatting.
+
+Topics
+
+- command substitution $(...)
+- variables
+- printf
+- integer arithmetic
+- awk
+
