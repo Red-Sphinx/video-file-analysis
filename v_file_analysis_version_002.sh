@@ -61,7 +61,7 @@ size=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         example_1.mp4)
 
-filesize=$(echo $size | awk '{printf "%.2f\n",$1/1024/1024}')
+filesize=$(echo "$size" | awk '{printf "%.2f\n",$1/1024/1024}')
 
 printf "Size       : %.2f MB\n" "$filesize"
 

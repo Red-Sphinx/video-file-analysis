@@ -1,4 +1,4 @@
-# video File Analysis Scripts
+# Video File Analysis Scripts
 
 A small collection of Bash scripts written while learning shell scripting and `ffprobe`.
 
@@ -20,9 +20,9 @@ Topics:
 
 ### Version 002
 
-Improved metadata formatting.
+Improved metadata formatting and output.
 
-Topics
+Topics:
 
 - command substitution $(...)
 - variables
