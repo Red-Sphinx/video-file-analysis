@@ -17,6 +17,7 @@ Topics:
 - ffprobe
 - command options
 - formatted output
+---
 
 ### Version 002
 
@@ -29,4 +30,21 @@ Topics:
 - printf
 - integer arithmetic
 - awk
+---
 
+### Version 003
+
+Accepts a filename supplied on the command line.
+
+Example:
+
+```bash
+./v_file_analysis_version_003.sh movie.mp4
+```
+
+Topics:
+
+- `$1`
+- quoting variables
+- user input
+---
