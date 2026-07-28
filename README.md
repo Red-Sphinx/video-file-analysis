@@ -48,3 +48,20 @@ Topics:
 - quoting variables
 - user input
 ---
+
+### Version 004
+
+Processes multiple files.
+
+Example:
+
+```bash
+./v_file_analysis_version_004.sh movie1.mp4 movie2.mp4 movie3.mp4
+```
+
+Topics:
+
+- `$@`
+- `for` loops
+- iteration
+---
