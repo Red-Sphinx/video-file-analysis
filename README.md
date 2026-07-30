@@ -65,3 +65,25 @@ Topics:
 - `for` loops
 - iteration
 ---
+
+### Version 005
+
+Added bitrate reporting and improved stream selection by querying only video, audio and subtitle stream where appropriate.
+
+Example:
+
+```bash
+./v_file_analysis_version_005.sh movie1.mp4 movie2.mp4 movie3.mp4
+```
+
+Topics:
+
+- -select_streams
+- multiple media streams
+- video codec
+- audio codec
+- subtitle codec
+- bitrate
+- awk
+- stream metadata
+---
