@@ -68,7 +68,7 @@ Topics:
 
 ### Version 005
 
-Added bitrate reporting and improved stream selection by querying only video, audio and subtitle stream where appropriate.
+Added bitrate reporting and improved stream selection by querying video, audio and subtitle streams where appropriate.
 
 Example:
 
@@ -86,4 +86,27 @@ Topics:
 - bitrate
 - awk
 - stream metadata
+---
+
+### Version 006
+
+Added basic defensive programming to improve user input validation.
+
+Example:
+
+```bash
+./v_file_analysis_version_006.sh movie1.mp4 movie2.mp4 movie3.mp4
+```
+
+Topics:
+
+- if statements
+- test expressions
+- argument count ($#)
+- file testing (-f)
+- logical NOT (!)
+- continue
+- exit
+- input validation
+- defensive programming
 ---
