@@ -110,3 +110,25 @@ Topics:
 - input validation
 - defensive programming
 ---
+
+### Version 007
+
+Extended media analysis by reporting additional video and audio properties useful for playback compatibility.
+
+Example:
+
+```bash
+./v_file_analysis_version_007.sh movie1.mp4 movie2.mp4 movie3.mp4
+```
+
+Topics:
+
+- container formats
+- codec profiles
+- pixel formats
+- scan type
+- audio channels
+- audio sample rate
+- dislay aspect ratio
+- playback compatibility
+---
