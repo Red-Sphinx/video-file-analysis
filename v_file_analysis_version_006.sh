@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Video File Ananysis - Version 006
+# Video File Analysis - Version 006
 
 # Adds basic defensive programming through input validation.
 # Improves variable names for readability.
