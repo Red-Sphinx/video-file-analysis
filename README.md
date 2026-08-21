@@ -129,6 +129,31 @@ Topics:
 - scan type
 - audio channels
 - audio sample rate
-- dislay aspect ratio
+- display aspect ratio
 - playback compatibility
+---
+
+### Version 008 - Refactoring experiments
+
+Version 008 explores several Bash techniques for reducing repeated code without changing the output produced by Version 007.
+
+Experiments include:
+
+- `mapfile` for reading command output into Bash arrays
+- Bash arrays and indexed access
+- functions
+- positional parameters inside functions
+- `"$@"` for forwarding arguments
+- `printf` formatting through a reusable `print_field()` function
+- command substitution
+- process substitution `< <(...)`
+- using `awk` together with Bash variables
+- separating data collection from output formatting
+
+The experiments showed that refactoring does not necessarily make a script easier to understand.
+
+Version 007 remains the clearest implementation for learning how `ffprobe` fields are selected and formatted.
+
+Version 008 is therefore kept as a collection of refactoring experiments rather than as a replacement for Version 007.
+ 
 ---

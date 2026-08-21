@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# Video File Analysis - Version 007
-
-# Adds more features for playback compatibility metadata.
+# Video File Analysis - Version 008 Print_Field() refactoring
 
 # Usage:
-# ./v_file_analysis_version_007.sh movie1.mp4 movie2.mp4 movie3.mp4
+# ./v_file_analysis_version_008_print_field_refactoring.sh movie1.mp4 movie2.mp4 movie3.mp4
 
 
 if [[ $# -eq 0 ]]
 then
     echo "Usage:"
-    echo "./v_file_analysis_version_007.sh movie1.mp4 movie2.mp4"
+    echo "./v_file_analysis_version_006.sh movie1.mp4 movie2.mp4"
     exit 1
 fi
 
@@ -27,13 +25,19 @@ fi
 
 echo "===== $file ====="
 
+print_field()
+{
+    printf "%-17s : %s\n" "$1" "$2"
+    #printf "%-18s : %s x %s\n" "$1" "$2"
+}
+
 container_format=$(ffprobe \
         -v error \
         -show_entries format=format_name \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Container         : %s\n" "$container_format"
+print_field "Container" "$container_format"
 
 video_codec=$(ffprobe \
         -v error \
@@ -42,7 +46,7 @@ video_codec=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Video Codec       : %s\n" "$video_codec"
+print_field "Video Codec" "$video_codec"
 
 codec_profile=$(ffprobe \
         -v error \
@@ -51,7 +55,8 @@ codec_profile=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Codec Profile     : %s\n" "$codec_profile"
+print_field "Codec Profile" "$codec_profile"
+
 
 pixfmt=$(ffprobe \
         -v error \
@@ -60,7 +65,7 @@ pixfmt=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Pixel Format      : %s\n" "$pixfmt"
+print_field "Pixel Format" "$pixfmt"
 
 width=$(ffprobe \
         -v error \
@@ -77,6 +82,7 @@ height=$(ffprobe \
         "$file")
 
 printf "Resolution        : %s x %s\n" "$width" "$height"
+#print_field "Resolution" "$width" "$height"
 
 aspect_ratio=$(ffprobe \
         -v error \
@@ -85,7 +91,7 @@ aspect_ratio=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Aspect Ratio      : %s\n" "$aspect_ratio"
+print_field "Aspect Ratio" "$aspect_ratio"
 
 scan_type=$(ffprobe \
         -v error \
@@ -94,7 +100,7 @@ scan_type=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Scan Type         : %s\n" "$scan_type"
+print_field "Scan Type" "$scan_type"
 
 average_framerate=$(ffprobe \
         -v error \
@@ -123,7 +129,7 @@ audio_codec=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Audio Codec       : %s\n" "$audio_codec"
+print_field "Audio Codec" "$audio_codec"
 
 audio_channels=$(ffprobe \
         -v error \
@@ -132,7 +138,7 @@ audio_channels=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Audio Channels    : %s\n" "$audio_channels"
+print_field "Audio Channels" "$audio_channels"
 
 audio_sample_rate=$(ffprobe \
         -v error \
@@ -141,7 +147,7 @@ audio_sample_rate=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Audio Sample Rate : %s\n" "$audio_sample_rate"
+print_field "Audio Sample Rate" "$audio_sample_rate"
 
 printf "\n"
 
@@ -153,7 +159,7 @@ subtitle_codec=$(ffprobe \
         -of default=noprint_wrappers=1:nokey=1 \
         "$file")
 
-printf "Subtitle Codec    : %s\n" "$subtitle_codec"
+print_field "Subtitle Codec" "$subtitle_codec"
 
 printf "\n"
 
